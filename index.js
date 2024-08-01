@@ -64,8 +64,9 @@ function CemberinCevresi(yariCap) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yariCap, pi) {
+  return Math.pow(yariCap, 2) * pi;
+  console.log (CemberinAlani);
 }
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -89,37 +90,53 @@ function CemberinAlani(/* kodlar buraya */) {
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let ucetambolunenler,
-  enkucuk,
-  enbuyuk,
+let ucetambolunenler = [],
+  enkucuk = sayilar[0],
+  enbuyuk = sayilar[0],
   ucebolunenlerintoplami,
-  besyuzdenkucuksayilar,
+  besyuzdenkucuksayilar = [],
   siralisayilar,
   tekraredensayilar;
 
 // 3a çözümü
 
-/* kodlar buraya */
+for(let i = 1; i < sayilar.length; i++) {
+  if (sayilar[i] > enbuyuk) {
+    enbuyuk = sayilar[i];
+  } if (sayilar[i] < enkucuk) {
+    enkucuk = sayilar[i];
+  }
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+sayilar.forEach((sayi) => {
+if(sayi % 3 === 0) {
+  ucetambolunenler.push(sayi);
+}
+})
+
+
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => toplam + sayi, 0)
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) =>  a - b);
 
 // 3f çözümü
 
-/* kodlar buraya */
+let tekrarEdenSayilar = [];     
+
+
+//tekrar eden sayıları bulucaz 
+//sonra bu sayıları. şu sayı şu kadar tekrar etmiştir. şeklinde bir string ile bir objeye atayacağız.
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
